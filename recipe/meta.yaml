@@ -1,5 +1,5 @@
 {% set name = "napari-nd2-folder-viewer" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-nd2-folder-viewer-{{ version }}.tar.gz
-  sha256: 19b5417d3d4b35d78ac1c3f8172ffd6fc542834dece958055a588d6f866dd4a3
+  sha256: b0063da3c72045970e8a53d3404e44489630bf8baddb81a1c8667f31957f4ba0
 
 build:
   noarch: python
@@ -18,7 +18,7 @@ requirements:
   host:
     - pip
     - python >=3.8
-    - setuptools_scm
+    - setuptools-scm
   run:
     - dask-core
     - desert
@@ -26,6 +26,7 @@ requirements:
     - magicgui
     - marshmallow
     - napari
+    - napari-animation
     - nd2
     - numpy
     - openpyxl
@@ -33,6 +34,7 @@ requirements:
     - python >=3.8
     - pyyaml
     - qtpy
+    - scikit-learn
 
 test:
   imports:
