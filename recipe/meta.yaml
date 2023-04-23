@@ -1,5 +1,5 @@
 {% set name = "napari-nd2-folder-viewer" %}
-{% set version = "0.0.12" %}
+{% set version = "0.0.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-nd2-folder-viewer-{{ version }}.tar.gz
-  sha256: af4f35d045840a6959fc170d47a034ee74cd0561552634544cb34ab0dd2e672b
+  sha256: c43de65a1981ab1382366aeb5bb1415d1c735e40bf235ab5a681303b5dddcc7b
 
 build:
   noarch: python
