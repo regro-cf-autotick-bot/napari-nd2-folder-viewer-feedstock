@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-nd2-folder-viewer-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-nd2-folder-viewer-{{ version }}.tar.gz
   sha256: c43de65a1981ab1382366aeb5bb1415d1c735e40bf235ab5a681303b5dddcc7b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - dask-core
@@ -31,7 +31,7 @@ requirements:
     - numpy
     - openpyxl
     - pandas
-    - python >=3.8
+    - python >={{ python_min }}
     - pyyaml
     - qtpy
     - scikit-learn
@@ -44,6 +44,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/gatoniel/napari-nd2-folder-viewer
